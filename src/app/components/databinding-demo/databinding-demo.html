@@ -1,0 +1,93 @@
+<!-- <p>databinding-demo works!</p> -->
+
+<h3 class="text-center">Let's Learn DataBinding</h3>
+
+<div class="border border-3 rounded-3 m-3 p-3">
+    <div>Name:{{name}}</div>
+
+    <div>
+       <img src="{{img_url}}" width="200" height="200"/>
+       <img [src]="img_url" width="200" height="200"/>
+       <img bind-src="img_url" width="200" height="200"/>
+     </div>
+       <div class="mt-2">
+        <div>Interpolation(1 way):<input  value="{{name}}"/>  </div>
+        <div>Property(1 way):<input  [value]="name"/>  </div>
+        <div>Property(1 way):<input  bind-value="name"/>  </div>
+        <div>2 way:<input  [(ngModel)]="name"/>  </div>
+       </div>
+
+       <div class="mt-2">
+        <button class="btn btn-primary" disabled="{{flag}}">Click me</button>
+        <button class="btn btn-primary mx-2" [disabled]="flag">Click me</button>
+        <button class="btn btn-primary mx-2" bind-disabled="flag">Click me</button>
+
+
+      <button class="btn btn-success mx-2" (click)="toggleFlag()" >Toggle flag</button>
+      </div>
+
+      <div class="mt-2">
+        <div>Attribute Binding:</div>
+        <input type="text" id="myBox" value="{{name}}" />
+
+        <input [maxLength]="max_allowed"  class="mx-2" />
+        <input [attr.maxlength]="max_allowed"  />
+
+        <input [pattern]="myPattern"  class="mx-2" />
+      </div>
+
+      <div class="mt-2">
+       <div>Need of Label Tag:</div>      
+          <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+          <!-- <label for="vehicle1"> I have a bike</label><br> -->
+           I have a bike
+          <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+          <!-- <label for="vehicle2"> I have a car</label><br> -->
+           I have a car
+          <input type="checkbox" [id]="vehicle" name="vehicle3" value="Boat">
+          <label [attr.for]="vehicle"> I have a boat</label>
+        </div> 
+    </div>
+
+    <div class="border border-3 rounded-3 m-3 p-3">
+    <div>Add 2 Numbers using 2-way binding::</div>
+    <div>Num1: <input type="number" [(ngModel)]='num1'></div>
+    <div>Num2: <input type="number" [(ngModel)]='num2'></div>
+
+    <p>Addition of {{num1}} and {{num2}} is {{num1+num2}}</p>
+
+    </div>
+
+
+     <div class="border border-3 rounded-3 m-3 p-3">
+    <div>Add 2 Numbers using Template Reference Variable::</div>
+    <div>Num1: <input type="number" #myBox1 id="box1"></div>
+    <div>Num2: <input type="number" ref-myBox2 id="box2"></div>
+    <div>Addition is {{addResult}}</div>
+  
+    <button class="btn btn-primary" (click)="addition(myBox1.value,myBox2.value)">Addition</button>
+     
+
+    </div>
+
+
+    
+     <div class="border border-3 rounded-3 m-3 p-3">
+       <div>Variables in HTML file::</div>
+      @let myName=user.name;
+      @let greeting='Hellooooo, '+ myName;
+      @let pi=3.1459;
+      @let coordinates={x:50,y:100};
+
+
+      <div>My name is : {{user.name}}</div>
+      <div>My name is : {{user.name}}</div>
+      <div>My name is : {{user.name}}</div>
+      <div>My name is : {{user.name}}</div>
+      <div>My name is : {{myName}}</div>
+      <div>My name is : {{greeting}}</div>
+
+      <div>{{greeting}}</div>
+
+
+      </div>

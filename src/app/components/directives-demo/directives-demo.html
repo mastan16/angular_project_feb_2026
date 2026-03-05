@@ -1,0 +1,57 @@
+<h3 class="text-center">Let's Learn Directives</h3>
+<div class="border border-2 rounded-2 m-2 p-2">
+  <div>ngIf Before Angular-17</div>
+  <div><input type="number" [(ngModel)]="num"></div>
+  <div *ngIf="num%2==0">{{num}} is Even</div>
+  <div *ngIf="num%2!=0">{{num}} is Odd</div>
+  <hr/>
+  <div>If-Else After Angular-17</div>
+  @if(num%2==0){
+    <div>{{num}} is Even</div>
+  }@else {
+    <div>{{num}} is Odd</div>
+  }
+</div>
+<div class="border border-2 rounded-2 m-2 p-2">
+  <div>Switch Case:</div>
+  @switch (num) {
+    @case (1) { <h1>Monday</h1> }
+    @case (2) { <h1>Tuesday</h1> }
+    @case (3) { <h1>Wednesday</h1> }
+    @case (4) { <h1>Thursday</h1> }
+    @case (5) { <h1>Friday</h1> }
+    @case (6) { <h1>Saturday</h1> }
+    @case (7) { <h1>Sunday</h1> }
+    @default { <h1>Not a Valid number</h1> }
+  }
+</div>
+<div class="border border-2 rounded-2 m-2 p-2">
+  <div>States List using For Loop/Directive</div>
+  <ul>
+    @for (state of statesArr; track $index) {
+      <li>{{state}}</li>
+    }
+  </ul>
+</div>
+<div class="border border-2 rounded-2 m-2 p-2">
+  <div>States dropdown using For Loop/Directive</div>
+  <select [(ngModel)]="selectedState">
+    @for (state of statesArr; track $index) {
+      <option>{{state}}</option>
+    }
+  </select>
+  <div> selectedState: {{selectedState}} </div>
+</div>
+<div class="border border-2 rounded-2 m-2 p-2">
+ <table>
+    @for (emp of employees; track $index)
+    {
+    <tr>
+       <td>{{emp.eId}}</td>
+    </tr>
+    }
+ </table>
+</div>
+<div class="border border-2 rounded-2 m-2 p-2">
+<!-- <span [ngClass]="{'pending':status=='pending','approved':status=='approved','rejected':status=='rejected'}">{{ status }}</span>  -->
+</div>
