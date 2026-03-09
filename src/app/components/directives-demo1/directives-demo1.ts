@@ -16,7 +16,7 @@ num:number=4;
 statesArr=["Bihar","Chhattisgarh","Goa","Gujarat","Haryana","Himachal Pradesh","Jharkhand","Karnataka","Kerala","Madhya Pradesh",
   "Maharashtra"
 ]
-
+selectedState = 'Bihar';
 employees=[
   {"eId":101,"name":"sanjay","sal":5000,"gender":"male"},
   {"eId":102,"name":"geeta","sal":8000,"gender":"female"},

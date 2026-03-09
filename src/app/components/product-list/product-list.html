@@ -1,0 +1,58 @@
+<h3 class="textcenter">Product List</h3>
+<p>
+    <button class="btn btn-primary mx-2" (click)="openAlert()" > Alert</button>
+    <button class="btn btn-primary mx-2" (click)="openConfirm()" > Confirm</button>
+    <button class="btn btn-primary mx-2" (click)="openSnackbar()" > Snackbar</button>
+
+
+</p>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-3 form-control">
+    <select (change)="filterProducts($event)">
+        @for(categoryItem of categorySet; track $index){
+            <option> {{categoryItem}}</option>
+        }
+    </select>
+</div>
+<div class="col-sm-3">
+
+</div>
+<div class="col-sm-6">
+<input type="search" (input)="searchProducts($event)" class="form-control" placeholder="Search..."  >
+</div>
+<div class="col-sm-3">
+<button class="btn btn-primary mx-1" (click)="sortAsc()">Sort Asc</button>
+<button class="btn btn-secondary"(click)="sortDesc()">Sort Desc</button>
+
+</div>
+
+</div>
+
+    <div class="row">
+        @for(product of productArr |paginate:{itemsPerPage:4,currentPage:p};track $index)
+        {
+
+            <div class="col-sm-3 card">
+            <img src="{{product.image}}" class="card-img-top" alt="..." style="height: 150px;">
+            <div class="card-body text-center">
+                <h5 class="card-title">{{product.category}}</h5>
+                <p class="card-text text-truncate">{{product.title}}</p>
+                <p class="card-text text-truncate">{{product.description}}</p>
+                <p class="card-text">{{product.price}}</p>
+                <p class="card-text">
+                    {{product.rating.rate}}
+                    <fa-icon [icon]="faStar"></fa-icon>
+                </p>
+                <a href="#" class="btn btn-primary">Details</a>
+            </div>
+            </div>
+        }
+    </div>
+    <div class="row mt-2">
+        <div class="col-sm-5 offset-3">
+            <pagination-controls (pageChange)="p=$event"></pagination-controls>
+        </div>
+    </div>
+</div>

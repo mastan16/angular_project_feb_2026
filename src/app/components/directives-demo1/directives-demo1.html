@@ -15,6 +15,33 @@
     }
 </div>
 
+
+<div class="border border-2 rounded-2 m-2 p-2">
+    <div>If vs hidden </div>
+    <pre>
+        -when if condition is false, the element will neither be displayed on the page/screen nor it
+        -when [hidden] condition is true, the element will not be displayed on the page/screen (display)
+    </pre>
+
+    @if(num%2==0)
+    {
+        <div>{{num}} is Even</div>
+    }@else{
+        <div>{{num}} is Odd</div>
+    }
+
+    <div [hidden]="num%2!==0">{{num}} is Even </div>
+    <div [hidden]="num%2===0">{{num}} is Odd </div>
+   
+    <select [(ngModel)]="selectedState" [hidden]="num%2==0">
+    @for(state of statesArr;track $index)
+    {
+        <option>{{state}}</option>
+    }
+</select>
+
+</div>
+
 <div class="border border-2 rounded-2 m-2 p-2">
 <div>Switch Case:</div>
 @switch(num){
@@ -34,7 +61,9 @@
 <ul>
     @for(state of statesArr;track $index)
     {
-        <li> {{state}} </li>
+        <!-- <li [style.color]="$first?'red':'green'"]> {{state}} </li> -->
+        <li [style.color]="$even?'red':'green'"]> {{state}} </li>
+
     }
 </ul>
 </div>
@@ -49,33 +78,49 @@
 </select>
 </div>
 
+
+
 <div class="border border-2 rounded-2 m-2 p-2">
    <div>Employee Table:</div> 
    <table class="table tablebordered">
     <thead>
         <tr>
-            <!-- <th>Emp Id</th>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Salary/th>  -->
-                @for(column of columnArr; track $index)
+             <!-- @for(column of columnArr; track $index)
                 {
                     <th>{{ column }}</th>
-                }
+                } -->
+            <th>Sl No.</th>
+            <th>Emp Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Salary</th> 
+            <th>is First Row?</th> 
+            <th>is Last Row?</th> 
+            <th>is even Row?</th> 
+            <th>is Odd Row?</th>                
         </tr>
     </thead>
     <tbody>
         @for(emp of employees;track $index)
         {
             <tr>
+                <td>{{$index+1}}</td>
                 <td>{{emp.eId}}</td>
                 <td>{{emp.name}}</td>
                 <td>{{emp.gender}}</td>
-                <td>{{emp.sal}}</td>               
+                <td>{{emp.sal}}</td>   
+                
+                <td>{{$first}}</td>
+                <td>{{$last}}</td>
+                <td>{{$even}}</td>
+                <td>{{$odd}}</td>
 
             </tr>
         }
     </tbody>
    </table>
+
+
+
 
 </div>
