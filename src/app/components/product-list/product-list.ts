@@ -5,10 +5,15 @@ import {faStar} from '@fortawesome/free-solid-svg-icons'
 import { NgxPaginationModule } from 'ngx-pagination';
 import Swal from 'sweetalert2';
 import Snackbar from 'awesome-snackbar';
+import { Textonly } from '../../custom_directives/textonly';
+import { Disablepaste } from '../../custom_directives/disablepaste';
+import { Disablerightclick } from '../../custom_directives/disablerightclick';
+import { Zoomin } from '../../custom_directives/zoomin';
+
 
 @Component({
   selector: 'app-product-list',
-  imports: [FontAwesomeModule,NgxPaginationModule],
+  imports: [FontAwesomeModule,NgxPaginationModule,Textonly,Disablepaste,Disablerightclick,Zoomin],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
@@ -24,7 +29,7 @@ export class ProductList {
     for(let product of product_data){
       this.categorySet.add(product.category);
     }
-    console.log(this.categorySet)
+   // console.log(this.categorySet)
   }
 
 filterProducts(event:any)
