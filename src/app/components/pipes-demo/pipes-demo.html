@@ -166,3 +166,17 @@
   </tbody>
 </table>
 </div>
+
+<div class="border border-2 rounded-2 p-2 m-2">
+    <div>Need of Impure Pipe: </div>
+
+    @for(item of numArr |mySort; track $index){
+      <b>{{item}} &nbsp;</b>
+    }
+   <div>
+    <input type="number" #newNum />
+    <button (click)="numArr.push(+newNum.value)">Add</button>
+   </div>
+
+    </div>
+

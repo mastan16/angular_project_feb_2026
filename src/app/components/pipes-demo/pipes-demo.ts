@@ -6,10 +6,11 @@ import { OrdinalPipe } from '../../custom-pipe/assignment/ordinal-pipe';
 import { AgePipe } from '../../custom-pipe/assignment/age-pipe';
 import { SalutationPipe } from '../../custom-pipe/assignment/salutation-pipe';
 import { FilterPipe } from '../../custom-pipe/assignment/filter-pipe';
+import { MySortPipe } from '../../custom-pipes/my-sort-pipe';
 
 @Component({
   selector: 'app-pipes-demo',
-  imports: [CommonModule, FormsModule,RemainingPipe,OrdinalPipe,AgePipe,SalutationPipe,FilterPipe],
+  imports: [CommonModule, FormsModule,RemainingPipe,OrdinalPipe,AgePipe,SalutationPipe,FilterPipe,MySortPipe],
   templateUrl: './pipes-demo.html',
   styleUrl: './pipes-demo.css',
 })
@@ -30,5 +31,7 @@ employees = [
     { name: 'Robert Brown', gender: 'male', designation: 'Manager' },
     { name: 'Emily Davis', gender: 'female', designation: 'Tester' }
   ];
+
+ numArr=[40,10,50,30];
 
 }

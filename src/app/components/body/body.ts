@@ -5,6 +5,7 @@ import { DirectivesDemo1 } from '../directives-demo1/directives-demo1';
 import { ProductList } from '../product-list/product-list';
 import { DirectiveAssignments } from '../directive-assignments/directive-assignments';
 import { PipesDemo } from '../pipes-demo/pipes-demo';
+import { Parent } from '../parent/parent';
 
 @Component({
   selector: 'app-body',
@@ -14,7 +15,8 @@ import { PipesDemo } from '../pipes-demo/pipes-demo';
    // DirectivesDemo1,
    // ProductList
    //DirectiveAssignments
-   PipesDemo
+   PipesDemo,
+   Parent
    ],
   templateUrl: './body.html',
   styleUrl: './body.css',
