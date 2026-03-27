@@ -6,6 +6,10 @@ import { ProductList } from '../product-list/product-list';
 import { DirectiveAssignments } from '../directive-assignments/directive-assignments';
 import { PipesDemo } from '../pipes-demo/pipes-demo';
 import { Parent } from '../parent/parent';
+import { EmployeeCrud } from '../employee-crud/employee-crud';
+import { UserList } from '../user-list/user-list';
+import { Demo1 } from '../demo1/demo1';
+
 
 @Component({
   selector: 'app-body',
@@ -15,8 +19,12 @@ import { Parent } from '../parent/parent';
    // DirectivesDemo1,
    // ProductList
    //DirectiveAssignments
-   PipesDemo,
-   Parent
+  // PipesDemo,
+   Parent,
+  // EmployeeCrud,
+  // UserList
+  //Starrating
+  //Demo1
    ],
   templateUrl: './body.html',
   styleUrl: './body.css',

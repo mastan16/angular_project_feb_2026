@@ -2,16 +2,31 @@
     <div class="row container text-center border border-2 p-2">
         <div>I am parent Component</div>
         <div>My Own data a: {{a}}</div>
+        <div><input type="number" [(ngModel)]="a"></div>
+
+             <div>My Own data mySal: {{mySal}}</div>
+        <div><input type="number" [(ngModel)]="mySal"></div>
+
         <div>My child2 data b:{{child2.b}}</div>
         <div>My child2 data c:{{child2.c}}</div>
         <div>Cars:{{carsParent}}</div>
 
+         <div>{{employee.name}} Has {{employee.skills.length}} skills:</div>
+  @for(skill of employee.skills; track $index){
+    <b>{{skill}}, &nbsp;</b>
+  }
+        
+        <button (click)="employee.skills.push('Java')">add skill </button>
+
 
            <div class="col-sm-6 border border-2 p-2">
-     <app-child1 [a]="a" [b]="child2.b" (carsEvent)="receiveCarsData($event)" ></app-child1>
+     <app-child1 [a]="a" [b]="child2.b" (carsEvent)="receiveCarsData($event)"  [employee]="employee" ></app-child1>
     </div>
      <div class="col-sm-6 border border-2 p-2">
-        <app-child2 [aChild2]="a" #child2 [cars]="carsParent"></app-child2>
+        <app-child2 [aChild2]="a" #child2 [cars]="carsParent">
+          <h4>Hello This Content is From Parent Component</h4>
+          <input type="text"  #inputBoxFromParent />
+        </app-child2>
     </div>
     </div>
 

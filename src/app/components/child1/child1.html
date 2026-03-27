@@ -1,5 +1,7 @@
 <p>child1 works!</p>
-  <div>My Parent's data a: {{a}}</div>
+  <div>My Parent's data a: {{a}}
+     <div><input type="number" [(ngModel)]="a"></div>
+  </div>
   <div>My sibling's data b: {{b}}</div>
   <div>My own data Cars: {{cars}}</div>
   <div>My own data Cars: {{cars}}</div>
@@ -7,3 +9,12 @@
 
 
   <button (click)="sendDataToParent()">send data to parent</button>
+  <button (click)="sayHii()" class="mx-2">Hii</button>
+  <button (click)="refresh()" class="mx-2">Refresh</button>
+
+
+
+  <div>My Parent data {{employee.name}} Has {{employee.skills.length}} skills:</div>
+  @for(skill of employee.skills; track $index){
+    <b>{{skill}}, &nbsp;</b>
+  }
