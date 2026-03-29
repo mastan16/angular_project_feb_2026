@@ -9,6 +9,10 @@ import { Parent } from '../parent/parent';
 import { EmployeeCrud } from '../employee-crud/employee-crud';
 import { UserList } from '../user-list/user-list';
 import { Demo1 } from '../demo1/demo1';
+import { SignalDemo1 } from '../signal-demo1/signal-demo1';
+import { SignalDemo2 } from '../signal-demo2/signal-demo2';
+import { FormDemo1 } from '../form-demo1/form-demo1';
+import { TemplateForm1Demo1 } from '../template-form1-demo1/template-form1-demo1';
 
 
 @Component({
@@ -20,11 +24,16 @@ import { Demo1 } from '../demo1/demo1';
    // ProductList
    //DirectiveAssignments
   // PipesDemo,
-   Parent,
+  // Parent,
   // EmployeeCrud,
   // UserList
   //Starrating
   //Demo1
+  //SignalDemo1
+  // SignalDemo2
+  // FormDemo1
+  TemplateForm1Demo1
+
    ],
   templateUrl: './body.html',
   styleUrl: './body.css',
