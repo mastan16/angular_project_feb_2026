@@ -13,11 +13,16 @@ import { SignalDemo1 } from '../signal-demo1/signal-demo1';
 import { SignalDemo2 } from '../signal-demo2/signal-demo2';
 import { FormDemo1 } from '../form-demo1/form-demo1';
 import { TemplateForm1Demo1 } from '../template-form1-demo1/template-form1-demo1';
+import { SignalFormDemo1 } from '../signal-form-demo1/signal-form-demo1';
+import { ModelForm } from '../model-form/model-form';
+import { DynamicForm } from '../dynamic-form/dynamic-form';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-body',
   imports: [
+    RouterOutlet,
    // DatabindingDemo
    // DirectivesDemo,
    // DirectivesDemo1,
@@ -32,8 +37,11 @@ import { TemplateForm1Demo1 } from '../template-form1-demo1/template-form1-demo1
   //SignalDemo1
   // SignalDemo2
   // FormDemo1
-  TemplateForm1Demo1
-
+  //TemplateForm1Demo1
+  //SignalFormDemo1
+      // ModelForm
+    // DynamicForm
+  
    ],
   templateUrl: './body.html',
   styleUrl: './body.css',

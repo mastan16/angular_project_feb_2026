@@ -9,11 +9,12 @@ import { Textonly } from '../../custom_directives/textonly';
 import { Disablepaste } from '../../custom_directives/disablepaste';
 import { Disablerightclick } from '../../custom_directives/disablerightclick';
 import { Zoomin } from '../../custom_directives/zoomin';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-product-list',
-  imports: [FontAwesomeModule,NgxPaginationModule,Textonly,Disablepaste,Disablerightclick,Zoomin],
+  imports: [FontAwesomeModule,NgxPaginationModule,Textonly,Disablepaste,Disablerightclick,Zoomin,RouterLink],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css',
 })
